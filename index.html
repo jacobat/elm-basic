@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Miqe Elm</title>
+    <script type="text/javascript" src="elm.js"></script>
+
+  </head>
+
+  <body>
+    <h1>Miqe Elm</h1>
+    <div id="elm"></div>
+    <div id="plop"></div>
+
+    <script>
+       // get an empty <div>
+       var div = document.getElementById('elm');
+
+       // embed our Elm program in that <div>
+       var app = Elm.embed(Elm.Main, div);
+
+       app.ports.the_model.subscribe(function(model) {
+         console.log(model.input);
+       })
+
+// get an empty <div>
+var plop = document.getElementById('plop');
+
+// embed our Elm program in that <div>
+var plopapp = Elm.embed(Elm.Plop, plop);
+    </script>
+  </body>
+</html>
